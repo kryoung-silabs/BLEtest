@@ -86,8 +86,8 @@ AR      = ar
 
 INCLUDEPATHS += \
 -I../common/uart \
--I../../../../protocol/bluetooth_2.3/ble_stack/inc/common \
--I../../../../protocol/bluetooth_2.3/ble_stack/inc/host \
+-I../../../../protocol/bluetooth/ble_stack/inc/common \
+-I../../../../protocol/bluetooth/ble_stack/inc/host \
 -I
 
 # -MMD : Don't generate dependencies on system header files.
@@ -141,8 +141,9 @@ override LDFLAGS +=
 ####################################################################
 
 C_SRC +=  \
-../../../../protocol/bluetooth_2.3/ble_stack/src/host/gecko_bglib.c \
-main.c
+../../../../protocol/bluetooth/ble_stack/src/host/gecko_bglib.c \
+main.c \
+app.c
 
 # this file should be the last added
 ifeq ($(OS),posix)
