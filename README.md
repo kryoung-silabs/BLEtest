@@ -18,16 +18,23 @@ BLEtest
  */
 
 Arguments:
--v Print version number defined in application.
--t <duration in ms>
--m <payload/modulation type, 0:PBRS9, 1:11110000 packet payload, 2:10101010 packet payload, 3:unmodulated carrier>
--p <power level in 0.1dBm steps>
--u <UART port name>
--c <channel, 2402 MHz + 2*channel>
--l <packet length, ignored for unmodulated carrier>
--r DTM receive test. Prints number of received DTM packets.
--x <16-bit crystal tuning value, e.g. 0x0136>
--a <48-bit MAC address, e.g. 01:02:03:04:05:06>
+ -v Print version number defined in application.
+ -t <duration in ms>
+ -m <payload/modulation type, 0:PBRS9, 1:11110000 packet payload, 2:10101010 packet payload, 3:unmodulated carrier>
+ -p <power level in 0.1dBm steps>
+ -u <UART port name>
+ -c <channel, 2402 MHz + 2*channel>
+ -l <packet length, ignored for unmodulated carrier>
+ -r DTM receive test. Prints number of received DTM packets.
+ -x <16-bit crystal tuning value, e.g. 0x0136>
+ -a <48-bit MAC address, e.g. 01:02:03:04:05:06>
+ -z Read 16-bit crystal tuning value
+ -f Read FW revision string from Device Information (GATT)
+ -e Enter a fast advertisement mode with scan response for TIS/TRP chamber testing
+ -d Run as a daemon process.
+ Example - transmit PRBS9 payload of length=25 for 10 seconds on 2402 MHz at 5.5dBm output power level on device connected to serial port /dev/ttyAMA0 :
+    BLEtest -t 10000 -m 0 -p 55 -u /dev/ttyAMA0 -c 0 -l 25
+
 
 Examples:
 
